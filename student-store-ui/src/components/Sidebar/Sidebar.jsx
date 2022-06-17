@@ -1,10 +1,11 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-export default function Sidebar() {
+export default function Sidebar(props) {
+  
   return (
     <section className="sidebar">
-      <p>SIDEBAR</p>
+      <button className="toggle-button">&rarr;</button>
     </section>
   )
 }

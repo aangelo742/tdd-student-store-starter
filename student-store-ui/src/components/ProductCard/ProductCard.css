@@ -1,7 +1,7 @@
 .product-card {
-    background:var(--pure-white);
-    border:solid 2px lightgrey;
+    border:solid 1px lightgrey;
     box-sizing: border-box;
+    background-color: white;
     margin: 15px;
     width: 250px;
     height: 350px;
@@ -20,4 +20,18 @@
 .product-card .product-price {
     padding-left: 10px;
 
+}
+
+.product-card .add  {
+    width: 20px;
+    height: 20px;
+}
+
+.product-card .remove  {
+    width: 20px;
+    height: 20px;
+}
+
+.product-buttons {
+    padding: 5px;
 }

@@ -1,0 +1,22 @@
+.hero {
+    display: flex;
+    justify-content: center;
+}
+
+.hero .content {
+    background-color: #00e08a;
+    color: white;
+    padding: 10px;
+}
+
+.hero .content .intro {
+    float: left;
+    width: 80%;
+}
+
+.hero .content .hero-img {
+    float: right;
+    width: 20%;
+    height: 100%;
+    position: relative;
+}

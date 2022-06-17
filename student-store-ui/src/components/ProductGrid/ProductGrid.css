@@ -1,0 +1,25 @@
+.product-grid {
+    width:100%;
+    max-width:100vw;
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.product-grid .content {
+    max-width:var(--content-width);
+    width:100%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.product-grid .product-card {
+    height:350px;
+    width:250px;
+    background:var(--pure-white);
+    display:flex;
+    flex-direction:column;
+}

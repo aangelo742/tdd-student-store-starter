@@ -23,7 +23,7 @@ export default function App() {
     getData();
   }, []);
 
-  console.log("Data: ", data)
+  console.log("Called from App.jsx: ", data)
 
   return (
         <div className="app">
@@ -34,7 +34,7 @@ export default function App() {
             <Navbar navLinks = {navLinks}/>
             
             <Routes>
-                <Route path="/" element={<Home />}/>
+                <Route path="/" element={<Home products = {data}/>}/>
                 <Route path="/products" element={<ProductDetail/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>

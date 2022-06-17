@@ -1,0 +1,23 @@
+.product-card {
+    background:var(--pure-white);
+    border:solid 2px lightgrey;
+    box-sizing: border-box;
+    margin: 15px;
+    width: 250px;
+    height: 350px;
+   }
+
+.product-card .product-img {
+    height: 250px;
+    top: 0;
+}
+
+.product-card .product-name {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.product-card .product-price {
+    padding-left: 10px;
+
+}

@@ -15,7 +15,7 @@ export default function App() {
 
 
   const [isFetching, setIsFetching] = useState(false)
-  console.log(isFetching)
+  //console.log(isFetching)
 
   const [error, setError] = useState(null)
 
@@ -92,7 +92,7 @@ export default function App() {
             
             <Routes>
                 <Route path="/" element={<Home products = {data} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
-                <Route path="/products/:productId" element={<ProductDetail/>}/>
+                <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>
           </main>

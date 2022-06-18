@@ -2,10 +2,10 @@
     border:solid 1px lightgrey;
     box-sizing: border-box;
     background-color: white;
-    margin: 15px;
+    margin: 0px 20px 20px 0px;
     width: 250px;
     height: 350px;
-   }
+}
 
 .product-card .media {
  width:100%;
@@ -13,6 +13,13 @@
  display:flex;
  justify-content:center
 }
+
+.product-card .product-information {
+    width: 50%;
+    float: left;
+    left: 0;
+}
+
 .product-card .media img {
  width:250px;
  height: 250px;
@@ -39,5 +46,17 @@
 }
 
 .product-buttons {
+    width: 50%;
+    float: right;
+    right: 0;
     padding: 5px;
+}
+
+.product-buttons .add,
+.product-buttons .remove {
+    float: right;
+    border: 1px solid #00eca9;
+    background-color: white;
+    color: #00eca9;
+    margin: 5px;
 }

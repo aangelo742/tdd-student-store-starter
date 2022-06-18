@@ -7,6 +7,7 @@
     background-color: #00c385;
     color: white;
     padding: 10px;
+    width: 58%;
 }
 
 .hero .content .intro {
@@ -16,7 +17,7 @@
 
 .hero .content .hero-img {
     float: right;
-    width: 20%;
-    height: 100%;
+    width: 120px;
+    height: 120px;
     position: relative;
 }

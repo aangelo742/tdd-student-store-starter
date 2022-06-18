@@ -6,7 +6,6 @@ export default function Navbar({navLinks}) {
   return (
     <nav className="navbar">
       <Logo />
-      <TwitterIcon />
       <NavLinks
         navLinks = {navLinks}
       />
@@ -35,13 +34,5 @@ export function NavLink({ navLink }) {
       <i className={navLink.icon}></i>
       <span>{navLink.label}</span>
     </li>
-  )
-}
-
-export function TwitterIcon() {
-  return (
-    <div className="twitter-icon">
-      <i className="fab fa-twitter"></i>
-    </div>
   )
 }

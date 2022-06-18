@@ -1,6 +1,7 @@
 import * as React from "react"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
+import Footer from "../Footer/Footer"
 import NotFound from "../NotFound/NotFound"
 import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
@@ -95,6 +96,7 @@ export default function App() {
                 <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>
+            <Footer></Footer>
           </main>
         </BrowserRouter>
       </div>

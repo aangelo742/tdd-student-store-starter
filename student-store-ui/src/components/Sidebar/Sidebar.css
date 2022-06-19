@@ -7,14 +7,15 @@ section {
     display: flex;
   }
 
-.sidebar {
+.sidebar .closed{
     background-color: #2c4047;
     border-right:solid 1px white;
     color: white;
 }
 
-.sidebar .open section {
+.sidebar .open {
   width: 350px;
+  background-color :red;
 }
 
 .sidebar button {

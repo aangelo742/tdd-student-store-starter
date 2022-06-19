@@ -4,7 +4,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart"
 export default function Sidebar(props) {
   if(!props.isOpen){
     return (
-      <section className="sidebar">
+      <section className="sidebar closed">
         <button className="toggle-button" onClick={props.handleOnToggle}>&rarr;</button>
         <ShoppingCart isOpen={props.isOpen} products={props.products} shoppingCart={props.shoppingCart} />
       </section>

@@ -11,6 +11,10 @@
 
 }
 
+.product-grid .content .title {
+    flex-basis: 100%;
+}
+
 .product-grid .product-card {
     height:350px;
     width:250px;

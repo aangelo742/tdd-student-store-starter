@@ -8,7 +8,9 @@ export default function ProductGrid(props) {
             <div className="product-grid">
                 
                 <div className="content">
-                    
+                    <div className="title">
+                        <h3>Best Selling Products</h3>
+                    </div> 
                     {
                         props.products.map((product) => {
                         return (

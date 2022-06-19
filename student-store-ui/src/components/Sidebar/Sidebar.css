@@ -4,7 +4,6 @@ section {
     height: 100%;
     top: 0;
     left: 0;
-    width: 75px;
     display: flex;
   }
 
@@ -12,6 +11,10 @@ section {
     background-color: #2c4047;
     border-right:solid 1px white;
     color: white;
+}
+
+.sidebar .open section {
+  width: 350px;
 }
 
 .sidebar button {

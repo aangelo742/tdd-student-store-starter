@@ -1,7 +1,6 @@
 import * as React from "react"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
-import Footer from "../Footer/Footer"
 import NotFound from "../NotFound/NotFound"
 import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
@@ -16,9 +15,10 @@ export default function App() {
 
 
   const [isFetching, setIsFetching] = useState(false)
-  //console.log(isFetching)
 
   const [error, setError] = useState(null)
+
+  const [isOpen, setToggle] = useState(false)
 
   const [shoppingCart, setShoppingCart] = useState([])
 
@@ -38,8 +38,19 @@ export default function App() {
     
   }
 
-  const handleOnToggle = () => {
+  useEffect(() => {
+    setIsFetching(true)
+    getData()
+  }, []);
 
+  const handleOnToggle = () => {
+    if(isOpen === false) {
+      setToggle(true)
+      console.log(true)
+    } else if(isOpen === true) {
+      setToggle(false)
+      console.log(false)
+    }
   }
 
   const handleAddItemToCart = (productId) => {
@@ -78,17 +89,11 @@ export default function App() {
 
   }
 
-  useEffect(() => {
-    setIsFetching(true)
-    getData()
-  }, []);
-
   return (
         <div className="app">
         <BrowserRouter>
           <main>
-            {/* YOUR CODE HERE! */}
-            <Sidebar />
+            <Sidebar isOpen = {isOpen} shoppingCart = {shoppingCart} products = {data} handleOnToggle = {handleOnToggle} />
             <Navbar navLinks = {navLinks}/>
             
             <Routes>
@@ -96,7 +101,6 @@ export default function App() {
                 <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>
-            <Footer></Footer>
           </main>
         </BrowserRouter>
       </div>

@@ -1,0 +1,25 @@
+.shopping-cart {
+    justify-content: center;
+}
+
+.shopping-cart .title {
+    
+}
+
+.shopping-cart .notification {
+
+}
+
+.shopping-cart .title .item-grid {
+    background-color: white;
+}
+
+table {
+    width: 90%;
+    color: black;
+    background-color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

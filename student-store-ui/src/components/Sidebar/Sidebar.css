@@ -7,15 +7,19 @@ section {
     display: flex;
   }
 
-.sidebar .closed{
-    background-color: #2c4047;
-    border-right:solid 1px white;
-    color: white;
+
+.sidebar .closed {
+  background-color: #2c4047;
+  border-right:solid 1px white;
+  color: white;
+  width: 65px;
 }
 
-.sidebar .open {
-  width: 350px;
-  background-color :red;
+.sidebar .opened {
+  background-color: #2c4047;
+  border-right:solid 1px white;
+  color: white;
+  width: 550px;
 }
 
 .sidebar button {

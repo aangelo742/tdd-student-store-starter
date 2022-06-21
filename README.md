@@ -14,11 +14,11 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-- [ ] User can click to expand the shopping cart in the left navigation.
+- [x] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [x] User can click to expand the shopping cart in the left navigation.
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
@@ -97,13 +97,13 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
-  - [ ] Should render the `Logo` component that links to the `/` route when clicked
+  - [x] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
+  - [x] Should render the `Logo` component that links to the `/` route when clicked
 
 **Logo.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
-  - [ ] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
+  - [x] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
 
 **Home.jsx**
 
@@ -136,14 +136,14 @@ The following specifications were met on the Express backend and the React front
   - [x] Should accept **at least** the following props:
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should define **at least** a `product` state variable and updater
+  - [] Should define **at least** a `product` state variable and updater
   - [x] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
   - [x] When the component is mounted to the screen...
     - [x] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
     - [x] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
     - [x] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
-    - [ ] It should store the `product` received by the request in state and then render the `ProductView` component.
-    - [ ] If no `product` is found with that `id`, it should render the `NotFound` component
+    - [x] It should store the `product` received by the request in state and then render the `ProductView` component.
+    - [x] If no `product` is found with that `id`, it should render the `NotFound` component
 
 **ProductView.jsx**
 
@@ -197,44 +197,44 @@ The following specifications were met on the Express backend and the React front
 
 **ShoppingCart.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
-  - [ ] Should accept **at least** the following props (and probably a few more):
+  - [x] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
+  - [x] Should accept **at least** the following props (and probably a few more):
     - `isOpen` - boolean representing the open/closed state of the Sidebar
     - `products` - the array of products fetched from the API
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
-  - [ ] For every item in the `shoppingCart`:
-    - [ ] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
-    - [ ] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
-  - [ ] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
-  - [ ] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
-  - [ ] If no items exist in the `shoppingCart`, it should render this message: `"No items added to cart yet. Start shopping now!"` inside an element with the `className` of `notification`
+  - [x] For every item in the `shoppingCart`:
+    - [x] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
+    - [x] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
+  - [x] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
+  - [x] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
+  - [x] If no items exist in the `shoppingCart`, it should render this message: `"No items added to cart yet. Start shopping now!"` inside an element with the `className` of `notification`
 
 **CheckoutForm.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with the `className` of `checkout-form`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with the `className` of `checkout-form`
+  - [x] Should accept **at least** the following props:
     - `isOpen` - boolean
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
     - `checkoutForm` - the form state for the `CheckoutForm` component
     - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm`
     - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
-  - [ ] Should render two `input` elements, each with the `className` of `checkout-form-input`
-    - [ ] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
-      - [ ] The first input should have:
-        - [ ] the `type` prop set to `email`
-        - [ ] the `name` prop set to `email`
-        - [ ] the `placeholder` prop set to `student@codepath.org`
-        - [ ] the `value` prop set by `checkoutForm.email`.
-        - [ ] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
-      - [ ] The second input should have:
-        - [ ] the `type` prop set to `text`
-        - [ ] the `name` prop set to `name`
-        - [ ] the `placeholder` prop set to `Student Name`
-        - [ ] the `value` prop set by `checkoutForm.name`.
-        - [ ] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
-  - [ ] Should render a `button` element with the `className` of `checkout-button`.
-    - [ ] It should contain the text `Checkout`.
-    - [ ] When clicked, it should call the `handleOnSubmit` function.
+  - [x] Should render two `input` elements, each with the `className` of `checkout-form-input`
+    - [x] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
+      - [x] The first input should have:
+        - [x] the `type` prop set to `email`
+        - [x] the `name` prop set to `email`
+        - [x] the `placeholder` prop set to `student@codepath.org`
+        - [x] the `value` prop set by `checkoutForm.email`.
+        - [x] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
+      - [x] The second input should have:
+        - [x] the `type` prop set to `text`
+        - [x] the `name` prop set to `name`
+        - [x] the `placeholder` prop set to `Student Name`
+        - [x] the `value` prop set by `checkoutForm.name`.
+        - [x] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
+  - [x] Should render a `button` element with the `className` of `checkout-button`.
+    - [x] It should contain the text `Checkout`.
+    - [x] When clicked, it should call the `handleOnSubmit` function.
       - [ ] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
       - [ ] If the `POST` request is successful...
         - [ ] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.

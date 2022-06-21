@@ -22,7 +22,7 @@ export default function App() {
 
   const [shoppingCart, setShoppingCart] = useState([])
 
-  const [checkoutForm, setCheckoutForm] = useState()
+  const [checkoutForm, setCheckoutForm] = useState({name: "",email: ""})
 
   const [data, setData] = useState([])
 
@@ -81,19 +81,45 @@ export default function App() {
     console.log("Shopping Cart(remove): ", shoppingCart)
   }
 
-  const handleOnCheckoutFormChange = () => {
-
+  const handleOnCheckoutFormChange = e => {
+    const { name, value } = e.target;
+    setCheckoutForm(prevCheckoutForm => ({
+      ...prevCheckoutForm,
+      [name]: value
+    }))
   }
 
   const handleOnSubmitCheckoutForm = () => {
+    
+    try {
+      let userOrder = {
+        user: {
+          name: checkoutForm.name,
+          email: checkoutForm.email
+        }, 
+        shoppingCart: shoppingCart
+      }
+      axios.post('https://codepath-store-api.herokuapp.com/store', userOrder)
 
+    } catch(error) {
+      console.log(error.toJSON())
+    }
   }
+  
 
   return (
         <div className="app">
         <BrowserRouter>
           <main>
-            <Sidebar isOpen = {isOpen} shoppingCart = {shoppingCart} products = {data} handleOnToggle = {handleOnToggle} />
+            <Sidebar 
+              isOpen = {isOpen} 
+              shoppingCart = {shoppingCart} 
+              products = {data} 
+              handleOnToggle = {handleOnToggle} 
+              checkoutForm = {checkoutForm} 
+              handleOnCheckoutFormChange = {handleOnCheckoutFormChange} 
+              handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}
+            />
             <Navbar navLinks = {navLinks}/>
             
             <Routes>

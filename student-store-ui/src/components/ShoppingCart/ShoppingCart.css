@@ -1,25 +1,53 @@
-.shopping-cart {
-    justify-content: center;
-}
-
 .shopping-cart .title {
-    
+    margin: 10px;
 }
 
 .shopping-cart .notification {
-
+    margin: 10px;
 }
 
 .shopping-cart .title .item-grid {
     background-color: white;
 }
 
+.shopping-cart .item-table {
+    margin: 10px;
+}
+
+.shopping-cart .item-table .item-information {
+    width: 100%;
+}
+
+.shopping-cart .price-container {
+    background-color: white;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.shopping-cart .price-container .subtotal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart .price-container .taxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart .price-container .total {
+    display: flex;
+    justify-content: space-between;
+}
+
 table {
-    width: 90%;
     color: black;
     background-color: white;
 }
 
-table, th, td {
+th {
+    background-color: #2c4047;
     border: 1px solid black;
+    color: white;
+    height: 40px;
 }

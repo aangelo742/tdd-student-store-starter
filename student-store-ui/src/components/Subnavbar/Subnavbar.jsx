@@ -31,7 +31,7 @@ export default function Subnavbar() {
                     <div className="hamburger-menu">
                         <i className="material-icons">menu</i>
                     </div>
-                    <ul class="category-menu open">
+                    <ul className="category-menu open">
                         <li className="is-active">
                             <button>All Categories</button>
                         </li>

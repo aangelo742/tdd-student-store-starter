@@ -20,6 +20,7 @@ export default function ProductGrid(props) {
                                 showDescription = {false}
                                 handleAddItemToCart = {props.handleAddItemToCart}
                                 handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
+                                shoppingCart = {props.shoppingCart}
                             />
                         )
                     

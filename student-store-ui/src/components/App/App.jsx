@@ -29,7 +29,11 @@ export default function App() {
   const getData = async () => {
 
     try {
-      const { data } = await axios.get("https://codepath-store-api.herokuapp.com/store")
+      //const { data } = await axios.get("https://codepath-store-api.herokuapp.com/store")
+      
+      const { data } = await axios.get("http://localhost:3001/store")
+
+      console.log(data)
       setData(data)
     } catch (err) {
         setError(err)
@@ -46,10 +50,8 @@ export default function App() {
   const handleOnToggle = () => {
     if(isOpen === false) {
       setToggle(true)
-      console.log(true)
     } else if(isOpen === true) {
       setToggle(false)
-      console.log(false)
     }
   }
 
@@ -123,7 +125,7 @@ export default function App() {
             <Navbar navLinks = {navLinks}/>
             
             <Routes>
-                <Route path="/" element={<Home products = {data} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
+                <Route path="/" element={<Home products = {data} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}/>
                 <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>

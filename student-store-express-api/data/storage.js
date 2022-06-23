@@ -1,10 +1,11 @@
-const path = require("path")
+//const path = require("path")
 const low = require("lowdb")
 const FileSync = require("lowdb/adapters/FileSync")
 
 class Storage {
   constructor() {
-    this.path = path.resolve(__dirname, "db.json")
+    //this.path = path.resolve(__dirname, "db.json")
+    this.path = `${__dirname}/db.json`
     this.setup()
   }
 
@@ -14,9 +15,11 @@ class Storage {
     this.db.defaults({ purchases: [], products: [] }).write()
   }
 
+  /*
   set(key, value) {
     return this.db.set(key, value)
   }
+  */
 
   get(key) {
     return this.db.get(key)

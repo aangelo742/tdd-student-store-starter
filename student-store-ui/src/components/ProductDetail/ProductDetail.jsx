@@ -10,15 +10,15 @@ function ProductDetail(props) {
 
   const [data, setData] = useState([]);  
   const getData = async () => {
-    const { data } = await axios.get(`https://codepath-store-api.herokuapp.com/store/${id.productId}`);
+    //const { data } = await axios.get(`https://codepath-store-api.herokuapp.com/store/${id.productId}`);
+    const { data } = await axios.get(`http://localhost:3001/store/${id.productId}`);
+    
     setData(data);
   };
   
   useEffect(() => {
     getData();
   }, []);
-
-  //console.log("ProductDetail: ", data.product)
 
   return (
       <div className="product-detail">

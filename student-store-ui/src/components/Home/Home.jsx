@@ -16,6 +16,7 @@ function Home(props) {
         products = {props.products.products} 
         handleAddItemToCart = {props.handleAddItemToCart}
         handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
+        shoppingCart = {props.shoppingCart}
         />
       <About />
       <ContactUs />

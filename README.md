@@ -4,8 +4,11 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-
+Week 2 GIF
 ![project2](https://user-images.githubusercontent.com/83144033/175096058-4b5dadd8-8585-4caf-b1e7-22c650c44a83.gif)
+
+Week 3 GIF
+
 
 
 ### Application Features
@@ -21,7 +24,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -57,7 +60,7 @@ The following specifications were met on the Express backend and the React front
       - [x] Each object in the array should have two fields:
         - [x] The `itemId` field should store the `id` of the item being purchased.
         - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
-    - [ ] `checkoutForm` - the user's information that will be sent to the API when they checkout.
+    - [x] `checkoutForm` - the user's information that will be sent to the API when they checkout.
   - [x] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
     - [x] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
     - [x] When the request completes successfully, it should store the `products` returned by the response in state.
@@ -138,7 +141,7 @@ The following specifications were met on the Express backend and the React front
   - [x] Should accept **at least** the following props:
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should define **at least** a `product` state variable and updater
+  - [x] Should define **at least** a `product` state variable and updater
   - [x] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
   - [x] When the component is mounted to the screen...
     - [x] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
@@ -175,8 +178,8 @@ The following specifications were met on the Express backend and the React front
   - [x] Should render an `img` element for the product:
     - [x] The `img` element should have a `src` attribute to set to the `image` property of the `product` prop.
     - [x] The `img` element should be wrapped in a `Link` component from `react-router-dom`.
-      - [ ] The `Link` element should have a `to` prop so that when the `img` element is clicked on, it should navigate to the product detail route for that product using its `id` attribute. For example, a product with an `id` of `4` should create a `Link` with its `to` prop set to `/products/4`.
-      - [ ] The `Link` that wraps the `img` element should be nested somewhere inside an element with the `className` of `media`.
+      - [x] The `Link` element should have a `to` prop so that when the `img` element is clicked on, it should navigate to the product detail route for that product using its `id` attribute. For example, a product with an `id` of `4` should create a `Link` with its `to` prop set to `/products/4`.
+      - [x] The `Link` that wraps the `img` element should be nested somewhere inside an element with the `className` of `media`.
   - [x] Should render two `buttons` elements...
     - [x] One button with a `className` of `add`. When clicked, it should call the `handleAddItemToCart` function with the `id` of the `product` as its only argument.
     - [x] One button with a `className` of `remove`. When clicked, it should call the `handleRemoveItemFromCart` function with the `id` of the `product` as its only argument.
@@ -185,7 +188,7 @@ The following specifications were met on the Express backend and the React front
 **Sidebar.jsx**
 
   - [x] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
-  - [ ] Should accept **at least** the following props (and probably a few more):
+  - [x] Should accept **at least** the following props (and probably a few more):
     - `isOpen` - boolean representing the open/closed state of the Sidebar
     - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
     - `products` - the array of products fetched from the API
@@ -237,64 +240,64 @@ The following specifications were met on the Express backend and the React front
   - [x] Should render a `button` element with the `className` of `checkout-button`.
     - [x] It should contain the text `Checkout`.
     - [x] When clicked, it should call the `handleOnSubmit` function.
-      - [ ] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
-      - [ ] If the `POST` request is successful...
-        - [ ] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.
-        - [ ] The `shoppingCart` should be emptied
-        - [ ] The `checkoutForm` should be reset to its default state.
+      - [x] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
+      - [x] If the `POST` request is successful...
+        - [x] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.
+        - [x] The `shoppingCart` should be emptied
+        - [x] The `checkoutForm` should be reset to its default state.
 
 **Server** - Create an Express server
-  - [ ] Wire up the appropriate middleware and error handlers in the `app.js` file
-  - [ ] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
-  - [ ] Have a `server.js` file that starts the app by listening on port `3001`.
+  - [x] Wire up the appropriate middleware and error handlers in the `app.js` file
+  - [x] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
+  - [x] Have a `server.js` file that starts the app by listening on port `3001`.
 
 **Models** - The API should use a `Store` model that handles the following
-  - [ ] List all products currently in the `db.json` file
-  - [ ] Fetch a single product by its id
-  - [ ] Create a purchase order
+  - [x] List all products currently in the `db.json` file
+  - [x] Fetch a single product by its id
+  - [x] Create a purchase order
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
-  - [ ] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
-  - [ ] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
-  - [ ] It should allow `POST` requests to the `/store` endpoint:
-    - [ ] The endpoint should create purchase orders for users and save them to the `db.json` file
-    - [ ] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
-      - [ ] The `shoppingCart` field should contain the user's order.
-        - [ ] This should be an array of objects.
-        - [ ] Each object in the array should have two fields:
-          <!-- - [ ] The `item` field should store an object of the item being purchased -->
-          - [ ] The `itemId` field should store the `id` of the item being purchased
-          - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
-      - [ ] The `user` field should contain the name and email of the person placing the order.
-      - [ ] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
-      - [ ] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
-      - [ ] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
-      - [ ] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
+  - [x] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
+  - [x] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
+  - [x] It should allow `POST` requests to the `/store` endpoint:
+    - [x] The endpoint should create purchase orders for users and save them to the `db.json` file
+    - [x] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
+      - [x] The `shoppingCart` field should contain the user's order.
+        - [x] This should be an array of objects.
+        - [x] Each object in the array should have two fields:
+          <!-- - [x] The `item` field should store an object of the item being purchased -->
+          - [x] The `itemId` field should store the `id` of the item being purchased
+          - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
+      - [x] The `user` field should contain the name and email of the person placing the order.
+      - [x] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
+      - [x] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
+      - [x] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
+      - [x] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
         - **required**:
-          - [ ] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
-          - [ ] `name` - the name of the user making the purchase
-          - [ ] `email` - the email of the user making the purchase
-          - [ ] `order` - the `shoppingCart` value sent in the `POST` request
-          - [ ] `total` - the calculated total of the order
-          - [ ] `createdAt` - a string representation of the date and time when the order was placed
+          - [x] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
+          - [x] `name` - the name of the user making the purchase
+          - [x] `email` - the email of the user making the purchase
+          - [x] `order` - the `shoppingCart` value sent in the `POST` request
+          - [x] `total` - the calculated total of the order
+          - [x] `createdAt` - a string representation of the date and time when the order was placed
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
-      - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+      - [x] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
 ---
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I felt like the labs prepared me enough for the project, specifically the Bank lab (Lab 2 I believe). I didn't feel unprepared, but more so overwhelmed by the work again. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I would have built out my website from scratch rather than mimicing the live example website. People were able to make so many great UI's by steering off the path a bit and would love to do that myself. I definitely would like to add a recent orders tab as well to show all previous orders.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I would like to take more creative freedoms in my website, everyone's website looked wonderful!
 
 ### Open-source libraries used
 
@@ -303,3 +306,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+Shoutout to the TA's Tatiana, Hope, and Roy. You guys are amazing! Thanks for helping me figure out the difficulties I had. 

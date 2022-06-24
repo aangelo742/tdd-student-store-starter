@@ -17,7 +17,6 @@ export default function ShoppingCart(props) {
         )
     }
     else if(props.shoppingCart.length > 0) {
-        console.log(props.shoppingCart)
         return (
             <div className="shopping-cart">
                 <div className="title">
@@ -33,15 +32,15 @@ export default function ShoppingCart(props) {
                         </tr>
                         {
                             props.shoppingCart.map((item) => {
-                                console.log("Item Product #: ", item.product)
-                                console.log("Quantity: ", item.quantity)
+                                //console.log("Item Product #: ", item.product)
+                                //console.log("Quantity: ", item.quantity)
                                 let product = props.products.products[item.product - 1]
-                                console.log("Actual Product: ", product)
+                                //console.log("Actual Product: ", product)
                                 let itemTotal = (product.price * item.quantity).toFixed(2)
-                                console.log("Item Total Price: ", itemTotal)
+                                //console.log("Item Total Price: ", itemTotal)
                                 subtotal = parseFloat(subtotal) + parseFloat(itemTotal)
                                 subtotal = subtotal.toFixed(2)
-                                console.log("Subtotal: ", subtotal)
+                                //console.log("Subtotal: ", subtotal)
                                 return (
                                     <tr>
                                         <td className="cart-product-name">{product.name}</td>

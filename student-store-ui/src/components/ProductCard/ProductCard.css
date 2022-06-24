@@ -17,6 +17,28 @@
     max-width: 800px;
 }
 
+.detail-product-card .amount {
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 6px;
+    color: white;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    display: flex;
+}
+
+.product-card .amount {
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 6px;
+    color: white;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    display: flex;
+}
+
 .detail-product-card .product-information {
     margin: 5px;
 }
@@ -33,7 +55,7 @@
 .detail-product-card .product-buttons .add,
 .detail-product-card  .product-buttons .remove {
     float: right;
-    border: 1px solid #00eca9;
+    border: 2px solid #00eca9;
     background-color: whitesmoke;
     color: #00eca9;
     margin: 5px;

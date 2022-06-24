@@ -15,6 +15,7 @@ export default function ProductView(props) {
                 showDescription = {true}
                 handleAddItemToCart = {props.handleAddItemToCart}
                 handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
+                shoppingCart = {props.shoppingCart}
             />       
         </div>
     )

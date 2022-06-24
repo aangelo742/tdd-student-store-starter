@@ -145,5 +145,185 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Angelo Alvarado",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        }
+      ],
+      "total": 380.52,
+      "createdAt": "2022-06-24T18:31:32.972Z"
+    },
+    {
+      "id": 2,
+      "name": "Angelo Alvarado",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 1,
+          "quantity": 5
+        }
+      ],
+      "total": 385.9,
+      "createdAt": "2022-06-24T18:32:34.960Z"
+    },
+    {
+      "id": 3,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 2,
+          "quantity": 3
+        },
+        {
+          "product": 4,
+          "quantity": 2
+        }
+      ],
+      "total": 11.96,
+      "createdAt": "2022-06-24T18:35:24.731Z"
+    },
+    {
+      "id": 4,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 2,
+          "quantity": 3
+        },
+        {
+          "product": 4,
+          "quantity": 2
+        }
+      ],
+      "total": 11.96,
+      "createdAt": "2022-06-24T18:35:29.011Z"
+    },
+    {
+      "id": 5,
+      "name": "Angelo Alvarado",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 10,
+          "quantity": 10
+        },
+        {
+          "product": 1,
+          "quantity": 5
+        }
+      ],
+      "total": 385.9,
+      "createdAt": "2022-06-24T18:36:24.203Z"
+    },
+    {
+      "id": 6,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 2,
+          "quantity": 3
+        },
+        {
+          "product": 4,
+          "quantity": 2
+        }
+      ],
+      "total": 11.96,
+      "createdAt": "2022-06-24T18:44:13.662Z"
+    },
+    {
+      "id": 7,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 2,
+          "quantity": 1
+        }
+      ],
+      "total": 1.63,
+      "createdAt": "2022-06-24T19:08:28.624Z"
+    },
+    {
+      "id": 8,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 2,
+          "quantity": 1
+        }
+      ],
+      "total": 1.63,
+      "createdAt": "2022-06-24T19:13:56.428Z"
+    },
+    {
+      "id": 9,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 1,
+          "quantity": 3
+        },
+        {
+          "product": 2,
+          "quantity": 4
+        }
+      ],
+      "total": 9.75,
+      "createdAt": "2022-06-24T19:54:51.217Z"
+    },
+    {
+      "id": 10,
+      "name": "Angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 1,
+          "quantity": 3
+        },
+        {
+          "product": 6,
+          "quantity": 4
+        }
+      ],
+      "total": 90.19,
+      "createdAt": "2022-06-24T19:55:30.551Z"
+    },
+    {
+      "id": 11,
+      "name": "angelo",
+      "email": "angelo@codepath.org",
+      "order": [
+        {
+          "product": 1,
+          "quantity": 3
+        },
+        {
+          "product": 2,
+          "quantity": 1
+        },
+        {
+          "product": 7,
+          "quantity": 3
+        }
+      ],
+      "total": 21.14,
+      "createdAt": "2022-06-24T20:43:54.290Z"
+    }
+  ]
 }

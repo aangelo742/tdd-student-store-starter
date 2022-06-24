@@ -27,6 +27,7 @@ function ProductDetail(props) {
           id = {id.productId}
           handleAddItemToCart = {props.handleAddItemToCart} 
           handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
+          shoppingCart = {props.shoppingCart}
         />
       </div>
     )

@@ -32,8 +32,6 @@ export default function App() {
       //const { data } = await axios.get("https://codepath-store-api.herokuapp.com/store")
       
       const { data } = await axios.get("http://localhost:3001/store")
-
-      console.log(data)
       setData(data)
     } catch (err) {
         setError(err)
@@ -59,14 +57,15 @@ export default function App() {
     let obj = shoppingCart.find(o => o.product === productId)
     if(obj) {
       obj.quantity += 1
+      setShoppingCart([...shoppingCart])
+      console.log(obj.quantity)
 
     } else if(!obj) {
       let newItem = {
         product: productId,
         quantity: 1
       }
-      shoppingCart.push(newItem)
-      setShoppingCart(shoppingCart)
+      setShoppingCart([...shoppingCart, newItem])
     }
     console.log("Shopping Cart(add): ", shoppingCart)
   }
@@ -75,6 +74,7 @@ export default function App() {
     let obj = shoppingCart.find(o => o.product === productId)
     if(obj) {
       obj.quantity -= 1
+      setShoppingCart([...shoppingCart])
       if(obj.quantity === 0) {
         const newArray = shoppingCart.filter(item => item.quantity != 0)
         setShoppingCart(newArray)
@@ -99,9 +99,20 @@ export default function App() {
           name: checkoutForm.name,
           email: checkoutForm.email
         }, 
-        shoppingCart: shoppingCart
+        shoppingCart: [...shoppingCart]
       }
-      axios.post('https://codepath-store-api.herokuapp.com/store', userOrder)
+      const result = axios.post('http://localhost:3001/store', userOrder)
+      .then(function(res) {
+        console.log("success!")
+        setShoppingCart([])
+        setCheckoutForm({name: "",email: ""})
+        alert("Order successful! See you soon!")
+        console.log(res)
+      })
+      .catch(function(error) {
+        console.log("Failed to submit order! Please fill shopping cart and name/email fields!")
+        alert("Failed to submit order! Please fill shopping cart and name/email fields!")
+      })
 
     } catch(error) {
       console.log(error.toJSON())
@@ -126,7 +137,7 @@ export default function App() {
             
             <Routes>
                 <Route path="/" element={<Home products = {data} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}/>
-                <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart}/>}/>
+                <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>
           </main>

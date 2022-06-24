@@ -2,9 +2,15 @@ import * as React from "react"
 import "./ProductCard.css"
 import { Link } from "react-router-dom"
 export default function ProductCard(props) {
-    console.log("Product Description: ", props.showDescription)
-    console.log(props.shoppingCart)
+    let obj
+    //console.log(props.shoppingCart)
+    if(props.shoppingCart) {
+        let product = props.product.id
+        obj = props.shoppingCart.find(o => o.product === product)
+    }
+   
     if(props.showDescription) {
+        //console.log(props.shoppingCart)
         return (
             <div className="detail-product-card">
                 <div className="media">
@@ -26,7 +32,12 @@ export default function ProductCard(props) {
                 <div className="product-buttons">
                     <button className="add" onClick={() => props.handleAddItemToCart(props.product.id)}>+</button>
                     <button className="remove" onClick={() => props.handleRemoveItemFromCart(props.product.id)}>-</button>
+                    
+                    
+                    {obj ? <div className="amount">{obj.quantity}</div> : null}
+                    
                 </div>
+                
             </div>
         )
 
@@ -50,15 +61,8 @@ export default function ProductCard(props) {
                     <button className="add" onClick={() => props.handleAddItemToCart(props.product.id)}>+</button>
                     <button className="remove" onClick={() => props.handleRemoveItemFromCart(props.product.id)}>-</button>
                 </div>
+                {obj ? <div className="amount">{obj.quantity}</div> : null}
             </div>
         )
     }   
-}
-
-export function amountCounter(props) {
-    return (
-        <div>
-
-        </div>
-    )
 }

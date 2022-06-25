@@ -10,3 +10,12 @@ export const socialMediaLinks = [
     { label: "Instagram", className: "nav-link" },
     { label: "Facebook", className: "nav-link" },
 ]
+
+//clothing", "food", "accessories", "tech"
+export const categories = [
+  { label: "All Categories"},
+  { label: "Clothing"},
+  { label: "Food"},
+  { label: "Accessories"},
+  { label: "Tech"}
+]

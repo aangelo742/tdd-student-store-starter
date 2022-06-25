@@ -23,8 +23,12 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([])
 
   const [checkoutForm, setCheckoutForm] = useState({name: "",email: ""})
+  
+  const [searchBar, setSearchBar] = useState("")
 
   const [data, setData] = useState([])
+
+  const [selectedCategory, setSelectedCategory] = useState("All Categories")
 
   const getData = async () => {
 
@@ -91,6 +95,10 @@ export default function App() {
     }))
   }
 
+  const handleOnSearchBarChange = (event) => {
+    setSearchBar(event.target.value)
+  }
+
   const handleOnSubmitCheckoutForm = () => {
     
     try {
@@ -136,7 +144,15 @@ export default function App() {
             <Navbar navLinks = {navLinks}/>
             
             <Routes>
-                <Route path="/" element={<Home products = {data} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}/>
+                <Route path="/" element={<Home products = {data} 
+                                               handleAddItemToCart = {handleAddItemToCart} 
+                                               handleRemoveItemFromCart = {handleRemoveItemFromCart} 
+                                               shoppingCart = {shoppingCart} 
+                                               selectedCategory = {selectedCategory} 
+                                               setSelectedCategory = {setSelectedCategory} 
+                                               handleOnSearchBarChange = {handleOnSearchBarChange}
+                                               searchBar = {searchBar}
+                                               />}/>
                 <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>

@@ -1,13 +1,20 @@
 import * as React from "react" 
 import "./Subnavbar.css"
+import { categories } from "../../constants"
 
-export default function Subnavbar() {
+export default function Subnavbar(props) {
     return (
         <nav className="sub-navbar" >
             <div className="content">
                 <div className="row">
                     <div className="search-bar">
-                        <input type="text" name="search" placeholder="Search" />
+                        <input 
+                            type="text" 
+                            name="search" 
+                            placeholder="Search"
+                            value={props.searchBar}
+                            onChange={props.handleOnSearchBarChange}
+                        />
                         <i className="material-icons">
                             search
                         </i>
@@ -32,24 +39,29 @@ export default function Subnavbar() {
                         <i className="material-icons">menu</i>
                     </div>
                     <ul className="category-menu open">
-                        <li className="is-active">
-                            <button>All Categories</button>
-                        </li>
-                        <li className="">
-                            <button>Clothing</button>
-                        </li>
-                        <li className="">
-                            <button>Food</button>
-                        </li>
-                        <li className="">
-                            <button>Accessories</button>
-                        </li>
-                        <li className="">
-                            <button>Tech</button>
-                        </li>
+                        {
+                            categories.map((category) => {
+                                return (
+                                    <CategoryCard 
+                                        category = {category}
+                                        selectedCategory = {props.selectedCategory}
+                                        setSelectedCategory = {props.setSelectedCategory}
+                                        isActive = {props.selectedCategory === category.label}
+                                    />
+                                )    
+                            })
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
+    )
+}
+
+export function CategoryCard(props) {
+    return (
+        <li className={props.isActive ? "is-active" : ""}>
+            <button onClick={() => props.setSelectedCategory(props.category.label)}>{props.category.label}</button>
+        </li>
     )
 }

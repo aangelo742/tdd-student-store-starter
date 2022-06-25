@@ -8,8 +8,7 @@ Week 2 GIF
 ![project2](https://user-images.githubusercontent.com/83144033/175096058-4b5dadd8-8585-4caf-b1e7-22c650c44a83.gif)
 
 Week 3 GIF
-
-
+![project2-be](https://user-images.githubusercontent.com/83144033/175751053-676562dc-0a9e-4d4b-a25e-ec0183a63207.gif)
 
 ### Application Features
 
